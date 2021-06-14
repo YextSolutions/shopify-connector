@@ -13,7 +13,7 @@
     "baseSelector": {
       "type": "JSON",
       "header": "products",
-      "path": "products[].variants[]"
+      "path": "[]"
     },
     "selectors": [
       {
@@ -24,7 +24,7 @@
       {
         "type": "JSON",
         "header": "Parent ID",
-        "path": "product_id"
+        "path": "productId"
       },
       {
         "type": "JSON",
@@ -34,12 +34,12 @@
       {
         "type": "JSON",
         "header": "Body",
-        "path": "body_html"
+        "path": "bodyHtml"
       },
       {
         "type": "JSON",
         "header": "Product Type",
-        "path": "product_type"
+        "path": "productType"
       },
       {
         "type": "JSON",
@@ -49,7 +49,7 @@
       {
         "type": "JSON",
         "header": "Currency Code",
-        "path": "currency_code"
+        "path": "currencyCode"
       },
       {
         "type": "JSON",
@@ -59,34 +59,38 @@
       {
         "type": "JSON",
         "header": "Stock Status",
-        "path": "stock_status"
+        "path": "stockStatus"
+      },
+      {
+        "type": "JSON",
+        "header": "Status",
+        "path": "status"
+      },
+      {
+        "type": "JSON",
+        "header": "Images",
+        "path": "images[0].src"
       }
     ]
   },
   "mappings": [
     {
-      "field": "yext/entityId",
-      "header": "ID",
+      "field": "c_shopifyProductStatus",
+      "header": "Status",
       "subfieldPath": []
     },
     {
-      "field": "yext/parentProduct",
-      "header": "Parent ID",
-      "subfieldPath": []
+      "field": "yext/price",
+      "header": "Currency Code",
+      "subfieldPath": [
+        {
+          "name": "currencyCode"
+        }
+      ]
     },
     {
-      "field": "yext/name",
-      "header": "Title",
-      "subfieldPath": []
-    },
-    {
-      "field": "yext/keywords",
+      "field": "c_shopifyProductType",
       "header": "Product Type",
-      "subfieldPath": []
-    },
-    {
-      "field": "yext/richTextDescription",
-      "header": "Body",
       "subfieldPath": []
     },
     {
@@ -99,13 +103,19 @@
       ]
     },
     {
-      "field": "yext/price",
-      "header": "Currency Code",
-      "subfieldPath": [
-        {
-          "name": "currencyCode"
-        }
-      ]
+      "field": "yext/parentProduct",
+      "header": "Parent ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/name",
+      "header": "Title",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/entityId",
+      "header": "ID",
+      "subfieldPath": []
     },
     {
       "field": "yext/sku",
@@ -116,6 +126,26 @@
       "field": "yext/stockStatus",
       "header": "Stock Status",
       "subfieldPath": []
+    },
+    {
+      "field": "yext/richTextDescription",
+      "header": "Body",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/photoGallery",
+      "header": "Images",
+      "subfieldPath": [
+        {
+          "index": 0
+        },
+        {
+          "name": "image"
+        },
+        {
+          "name": "url"
+        }
+      ]
     }
   ],
   "scheduleConfig": {
