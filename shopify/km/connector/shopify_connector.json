@@ -1,0 +1,124 @@
+{
+  "$id": "shopify_connector",
+  "$schema": "https://schema.yext.com/config/km/connector/v1",
+  "displayName": "Shopify Connector",
+  "entityType": "yext/product",
+  "source": {
+    "sourceConfig": {
+      "apiPushConfig": {
+        "app": "108443",
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "products",
+      "path": "products[].variants[]"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "ID",
+        "path": "id"
+      },
+      {
+        "type": "JSON",
+        "header": "Parent ID",
+        "path": "product_id"
+      },
+      {
+        "type": "JSON",
+        "header": "Title",
+        "path": "title"
+      },
+      {
+        "type": "JSON",
+        "header": "Body",
+        "path": "body_html"
+      },
+      {
+        "type": "JSON",
+        "header": "Product Type",
+        "path": "product_type"
+      },
+      {
+        "type": "JSON",
+        "header": "Price",
+        "path": "price"
+      },
+      {
+        "type": "JSON",
+        "header": "Currency Code",
+        "path": "currency_code"
+      },
+      {
+        "type": "JSON",
+        "header": "SKU",
+        "path": "sku"
+      },
+      {
+        "type": "JSON",
+        "header": "Stock Status",
+        "path": "stock_status"
+      }
+    ]
+  },
+  "mappings": [
+    {
+      "field": "yext/entityId",
+      "header": "ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/parentProduct",
+      "header": "Parent ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/name",
+      "header": "Title",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/keywords",
+      "header": "Product Type",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/richTextDescription",
+      "header": "Body",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/price",
+      "header": "Price",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "yext/price",
+      "header": "Currency Code",
+      "subfieldPath": [
+        {
+          "name": "currencyCode"
+        }
+      ]
+    },
+    {
+      "field": "yext/sku",
+      "header": "SKU",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/stockStatus",
+      "header": "Stock Status",
+      "subfieldPath": []
+    }
+  ],
+  "scheduleConfig": {
+    "useSourceSchedule": true
+  }
+}
