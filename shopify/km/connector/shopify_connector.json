@@ -2,7 +2,7 @@
   "$id": "shopify_connector",
   "$schema": "https://schema.yext.com/config/km/connector/v1",
   "displayName": "Shopify Connector",
-  "entityType": "yext/product",
+  "entityType": "product",
   "source": {
     "sourceConfig": {
       "apiPushConfig": {
@@ -80,7 +80,7 @@
       "subfieldPath": []
     },
     {
-      "field": "yext/price",
+      "field": "price",
       "header": "Currency Code",
       "subfieldPath": [
         {
@@ -94,7 +94,7 @@
       "subfieldPath": []
     },
     {
-      "field": "yext/price",
+      "field": "price",
       "header": "Price",
       "subfieldPath": [
         {
@@ -103,37 +103,37 @@
       ]
     },
     {
-      "field": "yext/parentProduct",
+      "field": "parentProduct",
       "header": "Parent ID",
       "subfieldPath": []
     },
     {
-      "field": "yext/name",
+      "field": "name",
       "header": "Title",
       "subfieldPath": []
     },
     {
-      "field": "yext/entityId",
+      "field": "entityId",
       "header": "ID",
       "subfieldPath": []
     },
     {
-      "field": "yext/sku",
+      "field": "sku",
       "header": "SKU",
       "subfieldPath": []
     },
     {
-      "field": "yext/stockStatus",
+      "field": "stockStatus",
       "header": "Stock Status",
       "subfieldPath": []
     },
     {
-      "field": "yext/richTextDescription",
+      "field": "richTextDescription",
       "header": "Body",
       "subfieldPath": []
     },
     {
-      "field": "yext/photoGallery",
+      "field": "photoGallery",
       "header": "Images",
       "subfieldPath": [
         {
